@@ -25,4 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
 # assesment-front
+
+the front uses angular 14 and angular material 
+
+constants.ts contains the server url
+products.service.ts contains the hole rest services
+app.component.ts contains the responsive configuration

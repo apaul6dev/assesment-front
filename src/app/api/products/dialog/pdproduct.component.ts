@@ -19,6 +19,9 @@ export class ProductDialogComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        /**
+         * load products
+         */
         this.product = new Product();
         this.product.id = this.data.id;
         this.product.name = this.data.name;
@@ -27,6 +30,9 @@ export class ProductDialogComponent implements OnInit {
         this.product.price = this.data.price;
     }
 
+    /**
+     * use to save o edit a product
+     */
     operar() {
         if (this.product != null && this.product.id > 0) {
             this.productService.update(this.product).subscribe(data => {

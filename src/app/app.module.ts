@@ -20,14 +20,22 @@ import { ProductsComponent } from './api/products/products.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ProductDialogComponent } from './api/products/dialog/pdproduct.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+/**
+ * Modules configurations
+ */
 @NgModule({
   declarations: [
-    AppComponent, ProductsComponent, ProductDialogComponent
+    AppComponent,
+    ProductsComponent,
+    ProductDialogComponent
   ],
   imports: [
-    BrowserModule, MatSortModule,
-    AppRoutingModule, MatDialogModule,MatSnackBarModule,
+    BrowserModule,
+    MatSortModule,
+    AppRoutingModule,
+    MatDialogModule,
+    MatSnackBarModule,
     MatListModule,
     BrowserAnimationsModule,
     MatSidenavModule,
@@ -45,8 +53,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatListModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatChipsModule,
-
+    MatChipsModule
   ],
   entryComponents: [
     ProductDialogComponent
@@ -54,4 +61,5 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

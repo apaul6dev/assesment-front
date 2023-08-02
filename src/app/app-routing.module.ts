@@ -7,6 +7,9 @@ const routes: Routes = [
   { path: 'orders', component: OrdersComponent },
 ];
 
+/**
+ * SPA configuration
+ */
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

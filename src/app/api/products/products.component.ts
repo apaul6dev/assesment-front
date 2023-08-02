@@ -22,24 +22,31 @@ export class ProductsComponent implements OnInit {
   dataSource: MatTableDataSource<Product> | any;
 
   @ViewChild(MatPaginator) paginator: MatPaginator | any;
-  @ViewChild(MatSort) sort: MatSort | any;
+  @ViewChild(MatSort) sort: MatSort | any; 
 
   constructor(private productsService: ProductService,
     private dialog: MatDialog, private snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
-
+    /**
+     * show messages about the actions
+     */
     this.productsService.msgChange.subscribe(data => {
       this.snackBar.open(data, 'Noticed', { duration: 2000 });
     });
-
+    /**
+     * refresh the table when there are changes
+     */
     this.productsService.productsChange.subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
 
+    /**
+     * List all products stored in the db
+     */
     this.productsService.getProducts().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
@@ -55,7 +62,11 @@ export class ProductsComponent implements OnInit {
       data: med
     });
   }
-
+  /**
+   * 
+   * @param product 
+   * Remove a product using its id
+   */
   removeData(product: Product) {
     this.productsService.delete(product.id ? product.id : 0).subscribe(data => {
       this.productsService.getProducts().subscribe(rs => {
@@ -64,7 +75,12 @@ export class ProductsComponent implements OnInit {
       });
     });
   }
-
+  /**
+   * 
+   * @param event 
+   * 
+   * used to manage the filter on the table
+   */
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

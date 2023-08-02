@@ -30,6 +30,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 the front uses angular 14 and angular material 
 
-constants.ts contains the server url
-products.service.ts contains the hole rest services
-app.component.ts contains the responsive configuration
+constants.ts contains the server url <br>
+products.service.ts contains the hole rest services <br>
+app.component.ts contains the responsive configuration <br>
